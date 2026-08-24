@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Googlebot (and all RFC 9309 crawlers) read robots.txt at the HOST root
+# only — project-level files under /RedoSan-Authenticity/ are invisible to
+# that host-level fetch. This is the one place a Sitemap directive is
+# guaranteed to be discovered, and same-host subpath targets are valid.
+Sitemap: https://redo-san.github.io/RedoSan-Authenticity/sitemap.xml

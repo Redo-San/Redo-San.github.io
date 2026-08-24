@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Host-root sitemap index. Exists so that tools resolving /sitemap.xml
+  against the bare host (e.g. a Search Console property whose origin is
+  https://redo-san.github.io/) find a valid, parseable file instead of a
+  404. It points at the real project sitemap; per the sitemaps protocol,
+  index entries must be absolute URLs — same-host subpaths are allowed.
+-->
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap>
+    <loc>https://redo-san.github.io/RedoSan-Authenticity/sitemap.xml</loc>
+    <lastmod>2026-08-24</lastmod>
+  </sitemap>
+</sitemapindex>
