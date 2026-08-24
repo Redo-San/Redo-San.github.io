@@ -2,17 +2,120 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta
-      name="google-site-verification"
-      content="vBNEdYqB2JK2r1n-dq8e0lJHPtiyT3CKNVZjjgXhkr4"
-    />
-  <meta http-equiv="refresh" content="0;url=https://redo-san.github.io/RedoSan-Authenticity/">
-  <title>Redirecting — RedoSan Authenticity</title>
-  <meta name="description" content="Digital content authenticity verification and watermarking tool">
-  <link rel="canonical" href="https://redo-san.github.io/RedoSan-Authenticity/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RedoSan Authenticity — Digital Watermark, Fingerprint &amp; Provenance Suite</title>
+  <meta name="description" content="Free, open-source digital authenticity suite: watermark images, audio and documents, verify file fingerprints, read EXIF metadata, issue C2PA provenance, DID identities and signed certificates. 100% in your browser.">
+  <link rel="canonical" href="https://redo-san.github.io/">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/favicon.ico">
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="RedoSan Authenticity">
+  <meta property="og:title" content="RedoSan Authenticity">
+  <meta property="og:description" content="Open-source digital authenticity suite — watermarking, fingerprinting, provenance and biometrics. 100% in your browser.">
+  <meta property="og:url" content="https://redo-san.github.io/">
+  <meta name="twitter:card" content="summary">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "RedoSan Authenticity",
+    "url": "https://redo-san.github.io/",
+    "description": "Free, open-source digital authenticity suite: watermarking, fingerprinting, provenance and biometrics, fully browser-based.",
+    "license": "https://www.gnu.org/licenses/old-licenses/gpl-2.0.html",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Redo-San",
+      "url": "https://github.com/Redo-San"
+    },
+    "sameAs": [
+      "https://github.com/Redo-San/RedoSan-Authenticity",
+      "https://redo-san.github.io/RedoSan-Authenticity/"
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --primary: #6c5ce7;
+      --primary-dark: #5a4bd1;
+      --bg: #0f0f1a;
+      --card: #1a1a2e;
+      --text: #e8e8f0;
+      --muted: #9b9bb5;
+      --border: #2a2a45;
+      --radius: 12px;
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f5f5fa;
+        --card: #ffffff;
+        --text: #1a1a2e;
+        --muted: #6b6b85;
+        --border: #d0d0e0;
+      }
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    main { flex: 1; max-width: 960px; width: 100%; margin: 0 auto; padding: 48px 20px; }
+    .hero { text-align: center; margin-bottom: 48px; }
+    .hero img { width: 88px; height: auto; border-radius: 16px; }
+    .hero h1 { font-size: clamp(1.7rem, 5vw, 2.6rem); margin: 18px 0 10px; letter-spacing: -0.02em; }
+    .hero h1 span { color: var(--primary); }
+    .hero p { color: var(--muted); font-size: 1.05rem; max-width: 640px; margin: 0 auto 26px; line-height: 1.65; }
+    .cta { display: inline-flex; align-items: center; gap: 8px; padding: 13px 28px; border-radius: var(--radius);
+           font-weight: 600; font-size: 1rem; text-decoration: none; transition: transform .15s ease, box-shadow .15s ease; }
+    .cta-primary { background: var(--primary); color: #fff; }
+    .cta-primary:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(108,92,231,.35); }
+    .cta-ghost { margin-inline-start: 12px; border: 1px solid var(--border); color: var(--text); background: var(--card); }
+    .cta-ghost:hover { border-color: var(--primary); }
+    .tools { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 14px; margin-bottom: 44px; }
+    .tool { display: block; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
+            padding: 18px; text-decoration: none; color: inherit; transition: border-color .15s ease, transform .15s ease; }
+    .tool:hover { border-color: var(--primary); transform: translateY(-3px); }
+    .tool b { display: block; margin-bottom: 4px; font-size: .98rem; }
+    .tool small { color: var(--muted); line-height: 1.45; display: block; }
+    footer { border-top: 1px solid var(--border); padding: 22px 20px; text-align: center;
+             color: var(--muted); font-size: .88rem; }
+    footer a { color: var(--muted); text-decoration: none; margin: 0 10px; }
+    footer a:hover { color: var(--primary); }
+  </style>
 </head>
 <body>
-  <p>Redirecting to <a href="https://redo-san.github.io/RedoSan-Authenticity/">RedoSan Authenticity</a>...</p>
-  <script>window.location.replace("https://redo-san.github.io/RedoSan-Authenticity/");</script>
+  <main>
+    <section class="hero">
+      <img src="/assets/logo.webp" alt="RedoSan logo" width="88" height="88">
+      <h1>RedoSan <span>Authenticity</span></h1>
+      <p>Free, open-source digital authenticity suite — watermark images, audio and documents,
+         verify file fingerprints, read EXIF metadata, issue C2PA provenance, DID identities
+         and signed passports. <strong>100% in your browser, nothing leaves your device.</strong></p>
+      <a class="cta cta-primary" href="https://redo-san.github.io/RedoSan-Authenticity/">Launch the app →</a>
+      <a class="cta cta-ghost" href="https://github.com/Redo-San/RedoSan-Authenticity">Source on GitHub</a>
+    </section>
+
+    <section class="tools" aria-label="Tool highlights">
+      <a class="tool" href="/RedoSan-Authenticity/Style/pages/watermark/index.html"><b>💧 Digital Watermark</b><small>9 algorithms: LSB, DCT, DWT and more</small></a>
+      <a class="tool" href="/RedoSan-Authenticity/Style/pages/fingerprint/index.html"><b>🔍 Fingerprint</b><small>SHA-2/SHA-3, BLAKE, perceptual hashes</small></a>
+      <a class="tool" href="/RedoSan-Authenticity/Style/pages/c2pa/index.html"><b>✨ C2PA Provenance</b><small>Read &amp; write content credentials</small></a>
+      <a class="tool" href="/RedoSan-Authenticity/Style/pages/did/index.html"><b>🆔 DID Identity</b><small>Decentralized IDs + crypto signing</small></a>
+      <a class="tool" href="/RedoSan-Authenticity/Style/pages/face-biometric/index.html"><b>👤 Face Biometric</b><small>Local face registration &amp; verification</small></a>
+      <a class="tool" href="/RedoSan-Authenticity/Style/pages/converter/index.html"><b>🔄 File Converter</b><small>PNG, JPEG, WebP, audio &amp; more</small></a>
+    </section>
+  </main>
+
+  <footer>
+    <span>GPL-2.0 © Redo-San</span>
+    <a href="https://github.com/Redo-San/RedoSan-Authenticity">GitHub</a>
+    <a href="/.well-known/security.txt">Security</a>
+  </footer>
 </body>
 </html>
