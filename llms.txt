@@ -1,0 +1,32 @@
+# RedoSan Authenticity
+
+> Free, open-source digital authenticity suite: watermark images, audio and
+> documents, verify file fingerprints, read EXIF metadata, issue C2PA
+> provenance, DID identities and signed certificates. Runs 100% in the
+> browser — no uploads, nothing leaves the user's device.
+
+Main application: https://redo-san.github.io/RedoSan-Authenticity/
+Source: https://github.com/Redo-San/RedoSan-Authenticity (GPL-2.0)
+Maintainer: Redo-San — https://github.com/Redo-San
+
+## Tools
+
+- [Digital Watermark](https://redo-san.github.io/RedoSan-Authenticity/Style/pages/watermark/index.html): 9 image watermarking algorithms (LSB, DCT, DWT and more).
+- [Digital Audio Watermark](https://redo-san.github.io/RedoSan-Authenticity/Style/pages/audio-watermark/index.html): hide secrets in WAV audio (LSB, phase coding, echo hiding, DSSS, QIM).
+- [Pixel Injection](https://redo-san.github.io/RedoSan-Authenticity/Style/pages/pixel-injection/index.html): 20+ advanced pixel-injection algorithms.
+- [Face Biometric](https://redo-san.github.io/RedoSan-Authenticity/Style/pages/face-biometric/index.html): local face registration and verification; templates never leave the device.
+- [Forensic Analyzer](https://redo-san.github.io/RedoSan-Authenticity/Style/pages/forensic/index.html): ELA, noise analysis, JPEG markers, tamper checks.
+- [ID Forge](https://redo-san.github.io/RedoSan-Authenticity/Style/pages/id_forge/index.html): UUID v4/v7, ULID, NanoID, SWHID generators.
+- [Digital Fingerprint](https://redo-san.github.io/RedoSan-Authenticity/Style/pages/fingerprint/index.html): SHA-2/SHA-3 family, BLAKE2/3, RIPEMD-160, Whirlpool, perceptual hashes.
+- [Metadata Reader](https://redo-san.github.io/RedoSan-Authenticity/Style/pages/metadata/index.html): EXIF and format inspection.
+- [Timestamp](https://redo-san.github.io/RedoSan-Authenticity/Style/pages/timestamp/index.html): OpenTimestamps create / verify / upgrade.
+- [DID Identity](https://redo-san.github.io/RedoSan-Authenticity/Style/pages/did/index.html): did:key generation and signing (Ed25519, P-256, RSA).
+- [C2PA Provenance](https://redo-san.github.io/RedoSan-Authenticity/Style/pages/c2pa/index.html): read and write content credentials.
+- [Digital Passport](https://redo-san.github.io/RedoSan-Authenticity/Style/pages/certificate/index.html): signed PDF/DOCX/EPUB certificates.
+- [File Converter](https://redo-san.github.io/RedoSan-Authenticity/Style/pages/converter/index.html): FFmpeg.wasm-powered media conversion.
+
+## Notes for AI crawlers
+
+The landing page at https://redo-san.github.io/ is a brand surface; the
+interactive application lives under /RedoSan-Authenticity/. Everything is
+client-side only: no accounts, no telemetry, no server-side processing.

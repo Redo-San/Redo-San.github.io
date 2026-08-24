@@ -9,12 +9,18 @@ application lives one level deeper at
 
 | File | Purpose |
 |------|---------|
-| `index.html` | Branded landing page: hero, tool highlights, CTA into the app, full SEO (OG, JSON-LD, canonical). |
+| `index.html` | Branded landing page: hero, tool highlights, CTA into the app, full SEO (OG image + Twitter card, JSON-LD, canonical), security hardening (CSP / Referrer-Policy metas), PWA manifest + theme-colors, Google site verification. |
 | `404.html` | Smart fallback served by GitHub Pages for every unmatched path. Maps unknown paths onto `/RedoSan-Authenticity/<path>` so deep links survive. `noindex`. |
+| `.nojekyll` | **Required**: disables Jekyll processing, which otherwise silently drops dot-folders — including `/.well-known/` (security.txt would 404). |
 | `robots.txt` | Host-root robots policy (crawlers fetch robots.txt at the host root only) declaring the absolute project sitemap. |
-| `sitemap.xml` | Host-root **sitemap index** pointing at the project sitemap, so tools resolving `/sitemap.xml` against the bare host get a parseable file instead of a 404. |
-| `.well-known/security.txt` | RFC 9116 security contact file. |
-| `favicon.ico`, `assets/logo.webp` | Brand assets served from the host root. |
+| `sitemap.xml` | Host-root **sitemap index** (root landing pages + the project sitemap) so tools resolving `/sitemap.xml` against the bare host get a parseable file instead of a 404. |
+| `root-pages.xml` | URL-set for host-root pages; referenced by the index above. |
+| `.well-known/security.txt` | RFC 9116 security contact file (Contact ×2, Expires, Preferred-Languages, Canonical, Policy). |
+| `manifest.webmanifest` | PWA manifest with 192/512 px icons incl. a maskable variant. |
+| `icon-192.png`, `icon-512.png`, `og-image.png` | Generated brand assets (icons + 1200×630 social card). |
+| `favicon.ico`, `assets/logo.webp` | Legacy favicon and hero logo served from the host root. |
+| `humans.txt` | Site/team credits in the classic humans.txt format. |
+| `llms.txt` | Structured summary for AI crawlers (emerging convention): tool catalog with canonical URLs. |
 
 ## Relationship to the main project
 
