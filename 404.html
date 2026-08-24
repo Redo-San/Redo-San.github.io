@@ -3,6 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; img-src 'self'; manifest-src 'self'; base-uri 'none'; form-action 'none'; connect-src 'self'; object-src 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0f0f1a">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f5f5fa">
   <meta name="robots" content="noindex">
   <title>404 — RedoSan Authenticity</title>
   <link rel="icon" href="/favicon.ico" sizes="any">
@@ -21,13 +25,23 @@
     // Preserve deep links by mapping the attempted path onto the app:
     //   /watermark            -> /RedoSan-Authenticity/watermark
     //   /Style/pages/c2pa/... -> /RedoSan-Authenticity/Style/pages/c2pa/...
+    // Loop guards: never re-prefix an app-side path, and cap auto-hops at
+    // two per session so a pathological target can never ping-pong.
     (function () {
-      var path = location.pathname.replace(/^\/+/, "");
-      if (!path || /^index\.html?$/i.test(path) || /^404\.html$/i.test(path)) {
+      var raw = location.pathname.replace(/^\/+/, "");
+      if (!raw || /^index\.html?$/i.test(raw) || /^404\.html$/i.test(raw)) {
         location.replace("/RedoSan-Authenticity/");
         return;
       }
-      location.replace("/RedoSan-Authenticity/" + path + location.search);
+      if (/^RedoSan-Authenticity(\/|$)/i.test(raw)) return; // already app-side
+      var KEY = "rs-404-hops";
+      var hops = 0;
+      try { hops = parseInt(sessionStorage.getItem(KEY) || "0", 10) || 0; } catch (e) {}
+      if (hops < 2) {
+        try { sessionStorage.setItem(KEY, String(hops + 1)); } catch (e) {}
+        location.replace("/RedoSan-Authenticity/" + raw + location.search);
+      }
+      // else: stay put — the manual button below is always available.
     })();
   </script>
 </head>

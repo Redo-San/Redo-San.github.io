@@ -1,0 +1,22 @@
+/* SITE */
+Name: RedoSan Authenticity
+Site: https://redo-san.github.io/
+Application: https://redo-san.github.io/RedoSan-Authenticity/
+Source: https://github.com/Redo-San/RedoSan-Authenticity
+License: GPL-2.0
+Language: English (Arabic UI available inside the application)
+Doctype: HTML5
+Standards: Modern evergreen browsers; no build step on this host-root site.
+
+/* TEAM */
+Redo-San — author & maintainer: https://github.com/Redo-San
+
+/* THANKS */
+The open-source community: pdf-lib, jsPDF, JSZip, QRious, OpenTimestamps,
+@vladmandic/human — and every issue reporter.
+
+/* NOTE */
+This repository hosts only the brand landing surface and host-root
+discovery files (robots.txt, sitemap index, security.txt). The full
+application is developed and deployed from the RedoSan-Authenticity
+repository.
