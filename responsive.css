@@ -1,0 +1,88 @@
+/*
+ * responsive.css — phone/tablet adaptation for the landing page
+ * Include AFTER style.css. Requires:
+ *   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+ */
+
+/* ── Safe areas & touch ergonomics ── */
+body {
+  padding: env(safe-area-inset-top) env(safe-area-inset-right)
+    env(safe-area-inset-bottom) env(safe-area-inset-left);
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+a, button, .tool, .cta, .ctl-btn {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+/* Comfortable 44px touch targets on coarse pointers */
+@media (pointer: coarse) {
+  .ctl-btn { width: 46px; height: 46px; }
+}
+
+.controls {
+  inset-block-start: calc(10px + env(safe-area-inset-top));
+  inset-inline-end: calc(10px + env(safe-area-inset-right));
+}
+
+main { padding-inline: 16px; }
+
+/* ── Phones (portrait & small landscape) ── */
+@media (width <= 767px) {
+  main { padding-block: 34px 26px; }
+  .hero { margin-bottom: 30px; }
+  .hero img { width: 72px; }
+  .hero p { font-size: .98rem; margin-bottom: 22px; }
+
+  /* Stack CTAs full-width for thumb reach */
+  .cta {
+    display: flex;
+    width: min(100%, 340px);
+    justify-content: center;
+    margin: 0 auto;
+  }
+  .cta + .cta { margin-block-start: 12px; }
+
+  .tools { grid-template-columns: 1fr; gap: 12px; margin-bottom: 30px; }
+  .tool { padding: 15px 16px; }
+
+  footer { padding: 18px 14px; font-size: .84rem; }
+  footer a { margin: 0 7px; white-space: nowrap; }
+}
+
+/* ── Small phones / narrow devices ── */
+@media (width <= 380px) {
+  main { padding-inline: 13px; }
+  .hero img { width: 64px; }
+  .hero h1 { font-size: 1.55rem; }
+  .hero p { font-size: .94rem; }
+  .ctl-btn { width: 42px; height: 42px; font-size: .98rem; }
+  .tools { grid-template-columns: 1fr; }
+  .tool b { font-size: .95rem; }
+}
+
+/* ── Short landscape phones ── */
+@media (height <= 480px) and (orientation: landscape) {
+  main { padding-block: 20px; }
+  .hero { margin-bottom: 18px; }
+  .hero img { width: 56px; }
+  .hero h1 { margin: 10px 0 6px; }
+  .hero p { margin-bottom: 14px; max-width: 560px; }
+  .cta { padding: 9px 20px; }
+  .cta + .cta { margin-block-start: 8px; }
+  .tools { grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 16px; }
+  .tool { padding: 12px; }
+  .controls { inset-block-start: 8px; }
+}
+
+/* ── Large tablets / small desktops ── */
+@media (768px <= width <= 1023px) {
+  .tools { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ── Wide desktops ── */
+@media (width >= 1200px) {
+  main { max-width: 1040px; }
+}

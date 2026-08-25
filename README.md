@@ -9,7 +9,9 @@ application lives one level deeper at
 
 | File | Purpose |
 |------|---------|
-| `index.html` | Branded landing page: hero, tool highlights, CTA into the app, full SEO (OG image + Twitter card, JSON-LD, canonical), security hardening (CSP / Referrer-Policy metas), PWA manifest + theme-colors, Google site verification. |
+| `index.html` | Branded landing page markup: hero, tool highlights, CTA into the app, full SEO (OG image + Twitter card, JSON-LD, canonical), security hardening (CSP / Referrer-Policy metas), PWA manifest + theme-colors, Google site verification, theme/language toggles. |
+| `style.css` | Base styles extracted from the page: design tokens (dark/light), layout components, brand-mark theme swap, accessibility helpers. |
+| `responsive.css` | Phone/tablet adaptation mirroring the main project's approach: safe-area insets, touch ergonomics (44px targets), breakpoints at ≤380 / ≤767 / landscape-short / 768–1023 / ≥1200. Deferred via the media=print pattern. |
 | `404.html` | Smart fallback served by GitHub Pages for every unmatched path. Maps unknown paths onto `/RedoSan-Authenticity/<path>` so deep links survive. `noindex`. |
 | `.nojekyll` | **Required**: disables Jekyll processing, which otherwise silently drops dot-folders — including `/.well-known/` (security.txt would 404). |
 | `robots.txt` | Host-root robots policy (crawlers fetch robots.txt at the host root only) declaring the absolute project sitemap. |
