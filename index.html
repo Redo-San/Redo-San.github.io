@@ -83,8 +83,8 @@
   <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
   <main id="main">
     <section class="hero">
-      <img class="logo-white" src="/assets/logo.webp" alt="RedoSan logo" width="192" height="128" fetchpriority="high">
-      <img class="logo-black" src="/assets/logo-black.png" alt="" aria-hidden="true" width="1536" height="1024">
+      <div class="logo-mark logo-white" role="img" aria-label="RedoSan logo"></div>
+      <div class="logo-mark logo-black" aria-hidden="true"></div>
       <h1>RedoSan <span>Authenticity</span></h1>
       <p data-i18n="tagline">Free, open-source digital authenticity suite — watermark images, audio and documents,
          verify file fingerprints, read EXIF metadata, issue C2PA provenance, DID identities
@@ -233,6 +233,14 @@
 
       document.getElementById("langBtn").addEventListener("click", function () {
         applyLang(currentLang() === "ar" ? "en" : "ar");
+      });
+
+      // Guard brand marks: block right-click save & native drag
+      ["contextmenu", "dragstart"].forEach(function (ev) {
+        document.addEventListener(ev, function (e) {
+          var t = e.target;
+          if (t && t.closest && t.closest(".logo-mark")) e.preventDefault();
+        });
       });
 
       // Copy every $ command from the terminal showcase

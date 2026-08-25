@@ -89,9 +89,24 @@ main { flex: 1; max-width: 960px; width: 100%; margin: 0 auto; padding: 48px 20p
 .hero { text-align: center; margin-bottom: 48px; }
 
 /* Brand mark, mirroring the main project's swap (Style/style.css):
-   white variant on dark, black variant on light. */
-.hero img { width: 88px; height: auto; border-radius: 16px; }
-.logo-black { display: none; }
+   white variant on dark, black variant on light.
+   Rendered as CSS backgrounds (not <img>) so browsers never offer
+   "Open/Save image as", plus drag & callout suppression below. */
+.logo-mark {
+  display: inline-block;
+  width: 88px;
+  height: 59px; /* 3:2 intrinsic ratio of both source assets */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border-radius: 16px;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  -webkit-touch-callout: none;
+}
+.logo-white { background-image: url("/assets/logo.webp"); }
+.logo-black { display: none; background-image: url("/assets/logo-black.png"); }
 [data-theme="light"] .logo-white { display: none; }
 [data-theme="light"] .logo-black { display: inline-block; }
 
