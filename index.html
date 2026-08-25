@@ -93,13 +93,40 @@
       <a class="cta cta-ghost" href="https://github.com/Redo-San/RedoSan-Authenticity" data-i18n="source">Source on GitHub</a>
     </section>
 
-    <section class="tools" aria-label="Tool highlights">
-      <a class="tool" href="/RedoSan-Authenticity/Style/pages/watermark/index.html"><b data-i18n="t1n">💧 Digital Watermark</b><small data-i18n="t1d">9 algorithms: LSB, DCT, DWT and more</small></a>
-      <a class="tool" href="/RedoSan-Authenticity/Style/pages/fingerprint/index.html"><b data-i18n="t2n">🔍 Fingerprint</b><small data-i18n="t2d">SHA-2/SHA-3, BLAKE, perceptual hashes</small></a>
-      <a class="tool" href="/RedoSan-Authenticity/Style/pages/c2pa/index.html"><b data-i18n="t3n">✨ C2PA Provenance</b><small data-i18n="t3d">Read &amp; write content credentials</small></a>
-      <a class="tool" href="/RedoSan-Authenticity/Style/pages/did/index.html"><b data-i18n="t4n">🆔 DID Identity</b><small data-i18n="t4d">Decentralized IDs + crypto signing</small></a>
-      <a class="tool" href="/RedoSan-Authenticity/Style/pages/face-biometric/index.html"><b data-i18n="t5n">👤 Face Biometric</b><small data-i18n="t5d">Local face registration &amp; verification</small></a>
-      <a class="tool" href="/RedoSan-Authenticity/Style/pages/converter/index.html"><b data-i18n="t6n">🔄 File Converter</b><small data-i18n="t6d">PNG, JPEG, WebP, audio &amp; more</small></a>
+    <section class="cli" aria-labelledby="cli-title">
+      <div class="cli-copy">
+        <h2 id="cli-title" data-i18n="cliTitle">One binary.<br>Every authenticity tool.</h2>
+        <p data-i18n="cliDesc">The same engine that powers the web app ships as a command-line interface — 14 commands for watermarking, fingerprinting, provenance and more. Install once, script it anywhere.</p>
+        <ul class="cli-points">
+          <li data-i18n="cliP1">Node.js 22+ · zero native deps beyond canvas</li>
+          <li data-i18n="cliP2">Pipe-friendly JSON output on every command</li>
+          <li data-i18n="cliP3">GPL-2.0 · source on GitHub</li>
+        </ul>
+      </div>
+
+      <div class="term" role="img" aria-label="Terminal showing example redosan commands">
+        <div class="term-bar">
+          <span class="dot dot-r" aria-hidden="true"></span>
+          <span class="dot dot-y" aria-hidden="true"></span>
+          <span class="dot dot-g" aria-hidden="true"></span>
+          <span class="term-title">zsh — redo-san</span>
+          <button type="button" class="copy-btn" id="copyBtn" aria-label="Copy all commands">Copy</button>
+        </div>
+<pre class="term-body"><code><span class="t-cmt"># Install once</span>
+<span class="t-p">$</span> npm install -g redosan-authenticity-cli
+
+<span class="t-cmt"># Embed an invisible watermark</span>
+<span class="t-p">$</span> redosan watermark embed -i photo.png -s secret.png -a lsb -p mypassword -o out.png
+
+<span class="t-cmt"># Verify a fingerprint (JSON output)</span>
+<span class="t-p">$</span> redosan fingerprint file.bin --algo sha256 --json
+
+<span class="t-cmt"># OpenTimestamps proof</span>
+<span class="t-p">$</span> redosan timestamp create doc.pdf -o proof.ots
+
+<span class="t-cmt"># Read EXIF metadata</span>
+<span class="t-p">$</span> redosan metadata shot.jpg --json</code></pre>
+      </div>
     </section>
   </main>
 
@@ -126,6 +153,12 @@
           t5n: "\uD83D\uDC64 Face Biometric",    t5d: "Local face registration & verification",
           t6n: "\uD83D\uDD04 File Converter",    t6d: "PNG, JPEG, WebP, audio & more",
           security: "Security",
+          cliTitle: "One binary.<br>Every authenticity tool.",
+          cliDesc: "The same engine that powers the web app ships as a command-line interface — 14 commands for watermarking, fingerprinting, provenance and more. Install once, script it anywhere.",
+          cliP1: "Node.js 22+ · zero native deps beyond canvas",
+          cliP2: "Pipe-friendly JSON output on every command",
+          cliP3: "GPL-2.0 · source on GitHub",
+          copy: "Copy", copied: "Copied!",
           themeLabel: "Toggle dark mode", themeIconDark: "\uD83C\uDF19", themeIconLight: "\u2600\uFE0F",
           langLabel: "Switch language"
         },
@@ -141,6 +174,12 @@
           t5n: "\uD83D\uDC64 \u0627\u0644\u0628\u064A\u0648\u0645\u062A\u0631\u064A\u0627\u062A \u0627\u0644\u0648\u062C\u0647\u064A\u0629",    t5d: "\u062A\u0633\u062C\u064A\u0644 \u0648\u062A\u062D\u0642\u0642 \u0645\u062D\u0644\u064A \u0645\u0646 \u0627\u0644\u0648\u062C\u0647",
           t6n: "\uD83D\uDD04 \u0645\u062D\u0648\u0651\u0644 \u0627\u0644\u0645\u0644\u0641\u0627\u062A",    t6d: "PNG \u0648JPEG \u0648WebP \u0648\u0627\u0644\u0635\u0648\u062A \u0648\u0627\u0644\u0645\u0632\u064A\u062F",
           security: "\u0627\u0644\u0623\u0645\u0627\u0646",
+          cliTitle: "\u062B\u0646\u0627\u0626\u064A \u0648\u0627\u062D\u062F.<br>\u0643\u0644 \u0623\u062F\u0648\u0627\u062A \u0627\u0644\u0623\u0635\u0627\u0644\u0629.",
+          cliDesc: "\u0627\u0644\u0645\u062D\u0631\u0643 \u0646\u0641\u0633\u0647 \u0627\u0644\u0630\u064A \u064A\u0634\u063A\u0651\u0644 \u062A\u0637\u0628\u064A\u0642 \u0627\u0644\u0648\u064A\u0628 \u0645\u062A\u0627\u062D \u0643\u0648\u0627\u062C\u0647\u0629 \u0623\u0648\u0627\u0645\u0631 \u2014 14 \u0623\u0645\u0631\u064B\u0627 \u0644\u0644\u0639\u0644\u0627\u0645\u0627\u062A \u0627\u0644\u0645\u0627\u0626\u064A\u0629 \u0648\u0627\u0644\u0628\u0635\u0645\u0627\u062A \u0648\u0627\u0644\u0625\u062B\u0628\u0627\u062A\u0627\u062A \u0648\u0623\u0643\u062B\u0631. \u062B\u0628\u0651\u062A\u0647 \u0645\u0631\u0629 \u0648\u0633\u0643\u0651\u0631\u0628\u0647 \u0641\u064A \u0623\u064A \u0645\u0643\u0627\u0646.",
+          cliP1: "Node.js 22+ \u00B7 \u0628\u0644\u0627 \u062A\u0628\u0639\u064A\u0627\u062A \u0623\u0635\u0644\u064A\u0629 \u0639\u062F\u0627 canvas",
+          cliP2: "\u0645\u062E\u0631\u062C\u0627\u062A JSON \u0635\u062F\u064A\u0642\u0629 \u0644\u0644\u062A\u0645\u0631\u064A\u0631 \u0641\u064A \u0643\u0644 \u0623\u0645\u0631",
+          cliP3: "GPL-2.0 \u00B7 \u0627\u0644\u0645\u0635\u062F\u0631 \u0639\u0644\u0649 GitHub",
+          copy: "\u0646\u0633\u062E", copied: "\u062A\u0645 \u0627\u0644\u0646\u0633\u062E!",
           themeLabel: "\u062A\u0628\u062F\u064A\u0644 \u0627\u0644\u0648\u0636\u0639 \u0627\u0644\u062F\u0627\u0643\u0646", themeIconDark: "\uD83C\uDF19", themeIconLight: "\u2600\uFE0F",
           langLabel: "\u062A\u063A\u064A\u064A\u0631 \u0627\u0644\u0644\u063A\u0629"
         }
@@ -162,6 +201,9 @@
         lb.textContent = lang === "ar" ? "EN" : "\u0639";
         lb.setAttribute("aria-label", d.langLabel);
         lb.title = d.langLabel;
+        var cb = document.getElementById("copyBtn");
+        if (cb && !cb.classList.contains("copied")) { cb.textContent = d.copy; }
+        cb.setAttribute("aria-label", d.copy);
         syncThemeButton();
         try { localStorage.setItem("rs-lang", lang); } catch (e) {}
       }
@@ -192,6 +234,42 @@
       document.getElementById("langBtn").addEventListener("click", function () {
         applyLang(currentLang() === "ar" ? "en" : "ar");
       });
+
+      // Copy every $ command from the terminal showcase
+      (function () {
+        var btn = document.getElementById("copyBtn");
+        if (!btn) return;
+        var cmds = Array.prototype.slice
+          .call(document.querySelectorAll(".term-body code"))
+          .flatMap(function (c) { return c.textContent.split("\n"); })
+          .filter(function (l) { return l.trim().indexOf("$") === 0; })
+          .map(function (l) { return l.replace(/^\s*\$\s*/, ""); })
+          .join("\n");
+        function done() {
+          var d = I18N[currentLang()] || I18N.en;
+          btn.textContent = d.copied;
+          btn.classList.add("copied");
+          setTimeout(function () {
+            btn.textContent = (I18N[currentLang()] || I18N.en).copy;
+            btn.classList.remove("copied");
+          }, 1600);
+        }
+        function fallback() {
+          var ta = document.createElement("textarea");
+          ta.value = cmds;
+          ta.style.position = "fixed";
+          ta.style.opacity = "0";
+          document.body.appendChild(ta);
+          ta.select();
+          try { document.execCommand("copy"); done(); } catch (e) {}
+          document.body.removeChild(ta);
+        }
+        btn.addEventListener("click", function () {
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(cmds).then(done, fallback);
+          } else { fallback(); }
+        });
+      })();
 
       applyLang(currentLang());
     })();
