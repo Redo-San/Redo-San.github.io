@@ -86,3 +86,17 @@ main { padding-inline: 16px; }
 @media (width >= 1200px) {
   main { max-width: 1040px; }
 }
+
+/* ── CLI showcase adaptation ── */
+@media (width <= 1023px) {
+  .cli { grid-template-columns: 1fr; gap: 26px; margin-bottom: 40px; }
+  .cli-copy h2 br { display: none; }
+}
+@media (width <= 767px) {
+  .term-body { font-size: .78rem; padding: 14px 14px 16px; }
+  .term-title { font-size: .7rem; }
+}
+@media (width <= 380px) {
+  .copy-btn { padding: 4px 9px; font-size: .68rem; }
+  .term-body { font-size: .72rem; }
+}

@@ -151,3 +151,80 @@ footer {
 
 footer a { color: var(--muted); text-decoration: none; margin: 0 10px; }
 footer a:hover { color: var(--primary); }
+
+/* ── CLI showcase ── */
+.cli {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 56px;
+}
+.cli-copy h2 { font-size: clamp(1.5rem, 3.4vw, 2.1rem); letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 12px; }
+.cli-copy > p { color: var(--muted); line-height: 1.65; margin-bottom: 18px; }
+.cli-points { list-style: none; }
+.cli-points li {
+  position: relative;
+  padding-inline-start: 22px;
+  color: var(--muted);
+  font-size: .95rem;
+  line-height: 1.9;
+}
+.cli-points li::before {
+  content: "▸";
+  position: absolute;
+  inset-inline-start: 2px;
+  color: var(--primary);
+}
+
+.term {
+  background: #0d1117;
+  border: 1px solid rgba(240,246,252,.14);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(0,0,0,.35);
+}
+.term-bar {
+  display: flex; align-items: center; gap: 7px;
+  padding: 11px 14px;
+  background: rgba(240,246,252,.05);
+  border-block-end: 1px solid rgba(240,246,252,.09);
+}
+.dot { width: 12px; height: 12px; border-radius: 50%; flex: none; }
+.dot-r { background: #ff5f57; } .dot-y { background: #febc2e; } .dot-g { background: #28c840; }
+.term-title {
+  margin-inline-start: 8px;
+  color: #8b949e;
+  font-size: .78rem;
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  flex: 1;
+  text-align: center;
+}
+.copy-btn {
+  flex: none;
+  border: 1px solid rgba(240,246,252,.18);
+  background: transparent;
+  color: #c9d1d9;
+  font-size: .74rem;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: background .15s ease, color .15s ease;
+}
+.copy-btn:hover { background: rgba(108,92,231,.28); color: #fff; }
+.copy-btn.copied { background: #238636; border-color: #238636; color: #fff; }
+
+.term-body {
+  margin: 0;
+  padding: 16px 18px 18px;
+  overflow-x: auto;
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  font-size: .84rem;
+  line-height: 1.75;
+  color: #e6edf3;
+}
+.t-cmt { color: #7d8590; font-style: italic; }
+.t-p { color: #a48bff; font-weight: 700; user-select: none; }
+
+@media (prefers-reduced-motion: reduce) { .copy-btn { transition: none; } }
