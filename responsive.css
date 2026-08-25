@@ -30,7 +30,7 @@ a, button, .tool, .cta, .ctl-btn {
 main { padding-inline: 16px; }
 
 /* ── Phones (portrait & small landscape) ── */
-@media (width <= 767px) {
+@media (max-width: 767px) {
   main { padding-block: 34px 26px; }
   .hero { margin-bottom: 30px; }
   .hero img { width: 72px; }
@@ -53,7 +53,7 @@ main { padding-inline: 16px; }
 }
 
 /* ── Small phones / narrow devices ── */
-@media (width <= 380px) {
+@media (max-width: 380px) {
   main { padding-inline: 13px; }
   .hero img { width: 64px; }
   .hero h1 { font-size: 1.55rem; }
@@ -78,25 +78,25 @@ main { padding-inline: 16px; }
 }
 
 /* ── Large tablets / small desktops ── */
-@media (768px <= width <= 1023px) {
+@media (min-width: 768px) and (max-width: 1023px) {
   .tools { grid-template-columns: repeat(2, 1fr); }
 }
 
 /* ── Wide desktops ── */
-@media (width >= 1200px) {
+@media (min-width: 1200px) {
   main { max-width: 1040px; }
 }
 
 /* ── CLI showcase adaptation ── */
-@media (width <= 1023px) {
+@media (max-width: 1023px) {
   .cli { grid-template-columns: 1fr; gap: 26px; margin-bottom: 40px; }
   .cli-copy h2 br { display: none; }
 }
-@media (width <= 767px) {
+@media (max-width: 767px) {
   .term-body { font-size: .78rem; padding: 14px 14px 16px; }
   .term-title { font-size: .7rem; }
 }
-@media (width <= 380px) {
+@media (max-width: 380px) {
   .copy-btn { padding: 4px 9px; font-size: .68rem; }
   .term-body { font-size: .72rem; }
 }
