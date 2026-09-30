@@ -17,3 +17,11 @@ updates:
     commit-message:
       prefix: "chore"
       include: "scope"
+    # CodeQL's init and analyze must resolve to the same version, so Dependabot
+    # has to move them together. Ungrouped it opens two PRs that each fail with
+    # "Loaded a configuration file for version '4.37.8', but running version
+    # '4.37.7'" -- that was #6, then #13/#14 again. One group, one atomic PR.
+    groups:
+      codeql-action:
+        patterns:
+          - "github/codeql-action/*"
